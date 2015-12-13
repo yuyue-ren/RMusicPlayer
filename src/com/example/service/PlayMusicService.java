@@ -25,8 +25,11 @@ public class PlayMusicService extends Service{
 	private String musicUrl;
 	//播放状态 默认顺序播放
 	private int playState;
+	//顺序播放
 	public static final int ordePlay=0;
+	//随机播放
 	public static final int randomPlay=1;
+	//重复不放
 	public static final int repeatPlay=2;
 	
 	//数据....
@@ -207,6 +210,11 @@ public class PlayMusicService extends Service{
 		public void playMusicByPosition(int position) {
 			String path=mp3Infos.get(currentPosition).getUrl();
 			playMusic(path);
+		}
+
+		@Override
+		public void setPlaybackOrder(int order) {
+			playState=order;
 		}
 
 		

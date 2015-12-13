@@ -11,5 +11,5 @@ public interface IMusicBinder {
 	void playNextMusic();
 	void playPreMusic();
 	void playMusicByPosition(int position);
-
+	void setPlaybackOrder(int order);
 }
